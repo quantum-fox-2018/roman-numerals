@@ -1,101 +1,33 @@
-function to_roman (num) {
+const pecahanRoman = [
+  {value:1000, label:"M"},
+  {value:900, label:"CM"},
+  {value:500, label:"D"},
+  {value:400, label:"CD"},
+  {value:100, label:"C"},
+  {value:90, label:"XC"},
+  {value:50, label:"L"},
+  {value:40, label:"XL"},
+  {value:10, label:"X"},
+  {value:9, label:"IX"},
+  {value:5, label:"V"},
+  {value:4, label:"IV"},
+  {value:1, label:"I"},]
+
+function to_roman(input) {
+  // start your code here
   var resultArr = [];
-
-  var temp = "";
-  while(num - 1000 >= 0){
-    temp += "M";
-    num -= 1000;
+  for (var i = 0; i < pecahanRoman.length; i++) {
+    var temp = "";
+    while(input - pecahanRoman[i].value >= 0){
+      temp += pecahanRoman[i].label;
+      input -= pecahanRoman[i].value;
+    }
+    resultArr.push(temp);
   }
-  resultArr.push(temp);
 
-  temp = "";
-  while(num - 900 >= 0){
-    temp += "CM";
-    num -= 900;
-  }
-  resultArr.push(temp);
-
-  temp = "";
-  while(num - 500 >= 0){
-    temp += "D";
-    num -= 500;
-  }
-  resultArr.push(temp);
-
-  temp = "";
-  while(num - 400 >= 0){
-    temp += "CD";
-    num -= 400;
-  }
-  resultArr.push(temp);
-
-  temp = "";
-  while(num - 100 >= 0){
-    temp += "C";
-    num -= 100;
-  }
-  resultArr.push(temp);
-
-  temp = "";
-  while( num - 90 >= 0){
-    temp += "XC"
-    num -= 90;
-  }
-  resultArr.push(temp);
-
-  temp = "";
-  while(num - 50 >= 0){
-    temp += "L";
-    num -= 50;
-  }
-  resultArr.push(temp);
-
-  temp = "";
-  while(num - 40 >= 0){
-    temp += "XL";
-    num -= 40;
-  }
-  resultArr.push(temp);
-
-  temp = "";
-  while(num - 10 >= 0){
-    temp += "X";
-    num -= 10;
-  }
-  resultArr.push(temp);
-
-  temp = "";
-  while(num - 9 >= 0){
-    temp += "IX";
-    num -= 9;
-  }
-  resultArr.push(temp);
-
-  var temp = "";
-  while(num - 5 >= 0){
-    temp += "V";
-
-    num -= 5;
-  }
-  resultArr.push(temp);
-
-  var temp = "";
-  while(num - 4 >= 0){
-    temp += "IV";
-    num -= 4;
-  }
-  resultArr.push(temp)
-
-  var temp = "";
-  while(num - 1 >= 0){
-    temp += "I";
-    num -= 1;
-  }
-  resultArr.push(temp);
-
-  var result =  resultArr.join("");
-  return result;
+  return resultArr.join("")
 }
+
 
 
 
