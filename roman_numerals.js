@@ -1,5 +1,34 @@
+/*
+SET variable library dengan value array dengan value = [[1000, 'M'],[900, 'CM'],[500, 'D'],[400, 'CD'],[100, 'C'],[90, 'XC'],
+[50, 'L'],[40, 'XL'],[10, 'X'],[9, 'IX'],[5, 'V'],[4, 'IV'],[1, 'I']]
+
+CREATE function toRoman dengan parameter sebuah angka bernama num
+
+  SET variable sisa dengan nilai num
+  SET variable str dengan string kosong
+
+  DO looping dari nilai i = 0 hingga panjang library, setiap iterasi i+1
+    SELAMA variable sisa masih lebih besar dari nilai library i index 0 maka
+      SET variable sisa dikurang library i index 0
+      SET variable str ditambah dengan library i index 1
+
+kembalikan nilai str */
+
+var library = [[1000, 'M'],[900, 'CM'],[500, 'D'],[400, 'CD'],[100, 'C'],[90, 'XC'],
+[50, 'L'],[40, 'XL'],[10, 'X'],[9, 'IX'],[5, 'V'],[4, 'IV'],[1, 'I']]
+
 function to_roman (num) {
-  // your implementation code here
+  var sisa = num
+  var str = ''
+
+  for (var i = 0; i < library.length; i++) {
+
+    while (sisa >= library[i][0] ) {
+      sisa -= library[i][0]
+      str += library[i][1]
+    }
+  }
+  return str
 }
 
 // Drive code
