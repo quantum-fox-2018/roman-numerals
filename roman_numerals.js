@@ -15,24 +15,6 @@ function to_roman (num) {
           arrResult.push(arrRoman[i]);
           num -= arrReduction[i];
         }
-        // if (num >= (i+1) && num < (i+2)) {
-        //   arrResult.push(arrRoman[i+1]);
-        //   num -= arrReduction[i+1];
-        // } 
-        // if (num >= (i+2) && num < (i+3)) {
-        //   arrResult.push(arrRoman[i+2]);
-        //   num -= arrReduction[i+2];
-        // } 
-        // if (num >= (i+3) && num < (i+4)) {
-        //   arrResult.push(arrRoman[i+3]);
-        //   num -= arrReduction[i+3];
-        // } 
-        
-        
-        // if (num >= arrReduction[i] && num < arrReduction[i+1]) {
-        //   arrResult.push(arrRoman[i]);
-        //   num -= arrReduction[i];
-        // }
       }
     }
     
