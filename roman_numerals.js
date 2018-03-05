@@ -1,5 +1,45 @@
 function to_roman (num) {
   // your implementation code here
+  var hasil = '';
+
+  while (num > 0) {
+    if (num >= 1000) {
+      num -= 1000;
+      hasil += 'M';
+    } else if (num >= 500){
+      num -= 500;
+      hasil += 'D';
+    } else if (num >= 400){
+      num -= 400;
+      hasil += 'CD';
+    } else if (num >= 100){
+      num -= 100;
+      hasil += 'C';
+    } else if (num >= 50){
+      num -= 50;
+      hasil += 'L';
+    } else if (num >= 40){
+      num -= 40;
+      hasil += 'XL';
+    } else if (num >= 10) {
+      num -= 10;
+      hasil += 'X'
+    } else if (num === 9) {
+      num -= 9;
+      hasil += 'IX';
+    } else if (num >= 5) {
+      num -= 5;
+      hasil += 'V';
+    } else if (num === 4) {
+      num -= 5;
+      hasil += 'IV';
+    } else {
+      num--;
+      hasil += 'I';
+    }
+  }
+
+  return hasil;
 }
 
 // Drive code
