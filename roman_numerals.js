@@ -1,5 +1,17 @@
 function to_roman (num) {
-  // your implementation code here
+  var angka = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  var romawi = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+  var result = '';
+  for (var i = 0; i <= angka.length; i++) { // looping untuk mengecek angka decimal dengan index i sepanjang decimal
+    while (num >= angka[i]) { // memmbuat batasan looping dari perbandingan num dan variable decimal dengan pengulanagn index i
+      //console.log(num, decimal[i]);
+      result += romawi[i]; // memasukkan angka romawi sesuai angaka decimal index i
+      //console.log('=='+result);
+      num -= angka[i]; // mengurangi num dengan angka decimal index i
+      //console.log('++'+num);
+    }
+  }
+  return result;
 }
 
 // Drive code
