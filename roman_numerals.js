@@ -1,6 +1,8 @@
+'use strict'
+
 function to_roman (num) {
   // your implementation code here
-  var hasil = '';
+  let hasil = '';
   var romanArray = [
       [1000, 'M'],
       [500, 'D'],
@@ -11,6 +13,7 @@ function to_roman (num) {
       [10, 'X'],
       [9, 'IX'],
       [5, 'V'],
+      [4, 'IV'],
       [1, 'I']
     ];
 
