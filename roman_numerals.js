@@ -26,7 +26,6 @@ function toRoman (num) {
   }
   
   return catchRoman;
-
 }
 
 // Drive code
